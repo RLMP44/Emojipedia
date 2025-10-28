@@ -7,7 +7,17 @@ function App() {
   return (
     <div>
       <Heading />
-      <Entry title={emojipedia[0].name} detail={emojipedia[0].meaning} />
+      <div className="dictionary">
+        {emojipedia.map((entry) => {
+          return (
+            <Entry
+              emoji={entry.emoji}
+              title={entry.name}
+              detail={entry.meaning}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
