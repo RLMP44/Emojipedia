@@ -4,9 +4,16 @@ import Console from "./components/Console";
 import emojipedia from "./emojipedia";
 
 // create new array that only has meaning text truncated to only 100 characters
-const newArray = emojipedia.map(function (entry) {
-  return entry.meaning.substring(0, 100);
-});
+// const newArray = emojipedia.map(function (entry) {
+//   return entry.meaning.substring(0, 100);
+// });
+
+// fat arrow denotes that it is a function
+// const newArray = emojipedia.map((entry) => {
+//   return entry.meaning.substring(0, 100);
+// });
+
+const newArray = emojipedia.map((entry) => entry.meaning.substring(0, 100));
 
 const root = ReactDom.createRoot(document.getElementById("root"));
 root.render(<Console print={newArray} />);
